@@ -65,82 +65,108 @@ c.forEach(z => {
 
 $('#send_message').on('click', function () {
     var email = $("#email").val()
-    var name = $("#name").val()
-    var message = $("#message").val()
+    const validateEmail = (email) => {
+        return email.match(
+            /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        );
+    };
 
-    var verification = (email != "" && email != " " && email != null) && (name != "" && name != " " && name != null) && (message != "" && message != " " && message != null)
+    if (validateEmail(email)) {
+        var name = $("#name").val()
+        var message = $("#message").val()
 
-    if (verification) {
-        swal.fire({
-            html: "Sending your message..",
-            allowEscapeKey: false,
-            allowOutsideClick: false,
-            showCancelButton: false,
-            showConfirmButton: false,
-            icon: "info",
-            timerProgressBar: true,
-            timer: 1500,
-            didOpen: () => {
-                timerInterval = setInterval(() => { }, 100)
-            },
-            willClose: () => {
-                clearInterval(timerInterval);
-            }
-        }).then(() => {
-            $.ajax({
-                url: "/Home/Send",
-                type: "POST",
-                dataType: "json",
-                data: {
-                    email: email,
-                    name: name,
-                    msg: message
+        var verification = (email != "" && email != " " && email != null) && (name != "" && name != " " && name != null) && (message != "" && message != " " && message != null)
+
+        if (verification) {
+            swal.fire({
+                html: "Sending your message..",
+                allowEscapeKey: false,
+                allowOutsideClick: false,
+                showCancelButton: false,
+                showConfirmButton: false,
+                icon: "info",
+                timerProgressBar: true,
+                timer: 1500,
+                didOpen: () => {
+                    timerInterval = setInterval(() => { }, 100)
                 },
-                success: function (result) {
-                    if (result == "sent") {
-                        swal.fire({
-                            html: "Your message has been sent.",
-                            allowEscapeKey: false,
-                            allowOutsideClick: false,
-                            showCancelButton: false,
-                            showConfirmButton: false,
-                            icon: "info",
-                            timerProgressBar: true,
-                            timer: 1500,
-                            didOpen: () => {
-                                timerInterval = setInterval(() => { }, 100)
-                            },
-                            willClose: () => {
-                                clearInterval(timerInterval);
-                            }
-                        })
-                        $("#email").val('');
-                        $("#name").val('');
-                        $("#message").val('');
-                    } else {
-                        swal.fire({
-                            html: "Something went wrong.",
-                            allowEscapeKey: false,
-                            allowOutsideClick: false,
-                            showCancelButton: false,
-                            showConfirmButton: false,
-                            icon: "error",
-                            timerProgressBar: true,
-                            timer: 1500,
-                            didOpen: () => {
-                                timerInterval = setInterval(() => { }, 100)
-                            },
-                            willClose: () => {
-                                clearInterval(timerInterval);
-                            }
-                        })
+                willClose: () => {
+                    clearInterval(timerInterval);
+                }
+            }).then(() => {
+                $.ajax({
+                    url: "/Home/Send",
+                    type: "POST",
+                    dataType: "json",
+                    data: {
+                        email: email,
+                        name: name,
+                        msg: message
+                    },
+                    success: function (result) {
+                        if (result == "sent") {
+                            swal.fire({
+                                html: "Your message has been sent.",
+                                allowEscapeKey: false,
+                                allowOutsideClick: false,
+                                showCancelButton: false,
+                                showConfirmButton: false,
+                                icon: "info",
+                                timerProgressBar: true,
+                                timer: 1500,
+                                didOpen: () => {
+                                    timerInterval = setInterval(() => { }, 100)
+                                },
+                                willClose: () => {
+                                    clearInterval(timerInterval);
+                                }
+                            })
+                            $("#email").val('');
+                            $("#name").val('');
+                            $("#message").val('');
+                        } else {
+                            swal.fire({
+                                html: "Something went wrong.",
+                                allowEscapeKey: false,
+                                allowOutsideClick: false,
+                                showCancelButton: false,
+                                showConfirmButton: false,
+                                icon: "error",
+                                timerProgressBar: true,
+                                timer: 1500,
+                                didOpen: () => {
+                                    timerInterval = setInterval(() => { }, 100)
+                                },
+                                willClose: () => {
+                                    clearInterval(timerInterval);
+                                }
+                            })
+                            console.log(result);
+                        }
                     }
+                })
+            })
+        } else {
+            swal.fire({
+                html: "Fields should be filled up.",
+                allowEscapeKey: false,
+                allowOutsideClick: false,
+                showCancelButton: false,
+                showConfirmButton: false,
+                icon: "warning",
+                timerProgressBar: true,
+                timer: 1500,
+                didOpen: () => {
+                    timerInterval = setInterval(() => { }, 100)
+                },
+                willClose: () => {
+                    clearInterval(timerInterval);
                 }
             })
-        })
+        }
     } else {
         swal.fire({
-            html: "Fields should be filled up.",
+            html: "Email should be correct.",
             allowEscapeKey: false,
             allowOutsideClick: false,
             showCancelButton: false,
