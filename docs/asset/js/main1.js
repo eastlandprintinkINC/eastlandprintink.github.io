@@ -62,3 +62,98 @@ c.forEach(z => {
         d.click();
     });
 });
+
+$('#send_message').on('click', function () {
+    var email = $("#email").val()
+    var name = $("#name").val()
+    var message = $("#message").val()
+
+    var verification = (email != "" && email != " " && email != null) && (name != "" && name != " " && name != null) && (message != "" && message != " " && message != null)
+
+    if (verification) {
+        swal.fire({
+            html: "Sending your message..",
+            allowEscapeKey: false,
+            allowOutsideClick: false,
+            showCancelButton: false,
+            showConfirmButton: false,
+            icon: "info",
+            timerProgressBar: true,
+            timer: 1500,
+            didOpen: () => {
+                timerInterval = setInterval(() => { }, 100)
+            },
+            willClose: () => {
+                clearInterval(timerInterval);
+            }
+        }).then(() => {
+            $.ajax({
+                url: "/Home/Send",
+                type: "POST",
+                dataType: "json",
+                data: {
+                    email: email,
+                    name: name,
+                    msg: message
+                },
+                success: function (result) {
+                    if (result == "sent") {
+                        swal.fire({
+                            html: "Your message has been sent.",
+                            allowEscapeKey: false,
+                            allowOutsideClick: false,
+                            showCancelButton: false,
+                            showConfirmButton: false,
+                            icon: "info",
+                            timerProgressBar: true,
+                            timer: 1500,
+                            didOpen: () => {
+                                timerInterval = setInterval(() => { }, 100)
+                            },
+                            willClose: () => {
+                                clearInterval(timerInterval);
+                            }
+                        })
+                        $("#email").val('');
+                        $("#name").val('');
+                        $("#message").val('');
+                    } else {
+                        swal.fire({
+                            html: "Something went wrong.",
+                            allowEscapeKey: false,
+                            allowOutsideClick: false,
+                            showCancelButton: false,
+                            showConfirmButton: false,
+                            icon: "error",
+                            timerProgressBar: true,
+                            timer: 1500,
+                            didOpen: () => {
+                                timerInterval = setInterval(() => { }, 100)
+                            },
+                            willClose: () => {
+                                clearInterval(timerInterval);
+                            }
+                        })
+                    }
+                }
+            })
+        })
+    } else {
+        swal.fire({
+            html: "Fields should be filled up.",
+            allowEscapeKey: false,
+            allowOutsideClick: false,
+            showCancelButton: false,
+            showConfirmButton: false,
+            icon: "warning",
+            timerProgressBar: true,
+            timer: 1500,
+            didOpen: () => {
+                timerInterval = setInterval(() => { }, 100)
+            },
+            willClose: () => {
+                clearInterval(timerInterval);
+            }
+        })
+    }
+});
