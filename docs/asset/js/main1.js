@@ -157,3 +157,24 @@ $('#send_message').on('click', function () {
         })
     }
 });
+
+const validateEmail = (email) => {
+    return email.match(
+        /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    );
+};
+
+const validate = () => {
+    const $result = $('#email');
+    const email = $('#email').val();
+    $result.css('border', '2px solid red');
+
+    if (validateEmail(email)) {
+        $result.css('border', '1px solid #ced4da');
+    } else {
+        $result.css('border', '2px solid red');
+    }
+    return false;
+}
+
+$('#email').on('input', validate);
