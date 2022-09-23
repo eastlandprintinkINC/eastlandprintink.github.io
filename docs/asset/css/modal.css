@@ -1,0 +1,44 @@
+@font-face {
+    font-family: "bebas";
+    src: url('font-family/bebas/BEBAS.woff') format('woff');
+}
+
+@font-face {
+    font-family: "cairo";
+    src: url('font-family/cairo/Cairoreg.ttf') format('truetype');
+}
+
+.modal-title {
+    font-family: cairo;
+}
+
+.modal-body {
+    font-family: cairo;
+}
+
+.modal-text, .modal-footer {
+    font-family: cairo;
+}
+
+.modal-hr {
+    background-color: black !important;
+}
+
+.modal .modal-body {
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 500px;
+}
+
+h5, h2, p, ul {
+    font-family: cairo;
+}
+
+ul.nostyle {
+    list-style: none;
+}
+
+.close {
+    background-color: transparent;
+    border: transparent;
+}

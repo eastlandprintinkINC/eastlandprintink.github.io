@@ -1,0 +1,226 @@
+/* For mobile phones: */
+[class*="col-"] {
+    width: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+    /* For tablets: */
+    .col-md-1 {
+        width: 8.33%;
+    }
+
+    .col-md-2 {
+        width: 16.66%;
+    }
+
+    .col-md-3 {
+        width: 25%;
+    }
+
+    .col-md-4 {
+        width: 33.33%;
+    }
+
+    .col-md-5 {
+        width: 41.66%;
+    }
+
+    .col-md-6 {
+        width: 50%;
+    }
+
+    .col-md-7 {
+        width: 58.33%;
+    }
+
+    .col-md-8 {
+        width: 66.66%;
+    }
+
+    .col-md-9 {
+        width: 75%;
+    }
+
+    .col-md-10 {
+        width: 83.33%;
+    }
+
+    .col-md-11 {
+        width: 91.66%;
+    }
+
+    .col-md-12 {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    /* For desktop: */
+    .col-1 {
+        width: 8.33%;
+    }
+
+    .col-2 {
+        width: 16.66%;
+    }
+
+    .col-3 {
+        width: 25%;
+    }
+
+    .col-4 {
+        width: 33.33%;
+    }
+
+    .col-5 {
+        width: 41.66%;
+    }
+
+    .col-6 {
+        width: 50%;
+    }
+
+    .col-7 {
+        width: 58.33%;
+    }
+
+    .col-8 {
+        width: 66.66%;
+    }
+
+    .col-9 {
+        width: 75%;
+    }
+
+    .col-10 {
+        width: 83.33%;
+    }
+
+    .col-11 {
+        width: 91.66%;
+    }
+
+    .col-12 {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .EastLandLogo {
+        width: 60% !important;
+    }
+
+    .carousel {
+        margin-top: 20px !important;
+    }
+
+    .carousel-item {
+        height: 170px !important;
+    }
+
+    #carousel-img {
+        max-height: 170px !important;
+    }
+
+    .text {
+        font-size: 11px;
+    }
+
+    .abouttext {
+        font-size: 14px !important;
+    }
+
+    .abouttext3 {
+        font-size: 14px !important;
+    }
+
+    .abouttextt {
+        font-size: 14px !important;
+    }
+
+    .abouttextt1 {
+        font-size: 14px !important;
+    }
+
+    .abouttext, .intro, .abouttextt, .introbottom, .footerimage, .abouttextt1, .abouttext3, .footerimage1, .footerimage2 {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    .loob, .loob1, .viewrifyimage, .marina  {
+        width: 93% !important;
+        margin-top: 60px;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+
+
+    .marina {
+       height: 85%;
+    }
+
+    .apostille, .apostille3 {
+        width: 93%;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    .marina, .apostille, .apostille3 {
+        margin-bottom: 20px;
+    }
+
+    .loob {
+        height: 5% !important;
+        margin-top: 0px !important;
+    }
+
+    .loob1 {
+        margin-top: 0px !important;
+    }
+
+    .margs {
+        margin-top: -25px !important;
+    }
+
+    .EPI {
+        margin-left: 0px !important;
+        margin-top: 40px !important;
+        width: 160px !important;
+        font-size: 27px !important;
+    }
+    
+    .margins2 {
+        margin-top: 20px !important;
+    }
+
+    .boder2 {
+        width: auto;
+        margin-bottom: 50px;
+        background-color: transparent !important;
+    }
+
+    .boder3 {
+        width: auto;
+        margin-bottom: 50px;
+        background-color: transparent !important;
+    }
+
+    .margins1 {
+        margin-bottom: 25px;
+    }
+
+    .margins3 {
+        margin-top: 50px;
+        margin-bottom: 25px;
+        background: rgba(0, 151, 19, 0.1);
+    }
+
+    #cookieConsent a.cookieConsentOK {
+        margin: 0px 60px 0 10px !important;
+    }
+}

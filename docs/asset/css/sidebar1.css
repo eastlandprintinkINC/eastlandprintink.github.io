@@ -1,0 +1,368 @@
+.wrapper .section {
+    width: calc(100% - 225px);
+    margin-left: 225px;
+    transition: all 0.5s ease;
+}
+
+.wrapper .sidebar {
+    background: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 225px;
+    height: 100%;
+    padding: 20px 0;
+    transition: all 0.5s ease;
+    overflow-y: auto;
+}
+
+/* FIREFOX SCROLLBAR */
+.wrapper .sidebar {
+    scrollbar-width: thin;
+    scrollbar-color: grey;
+}
+
+/* CHROME, EDGE, and SAFARI SCROLLBAR */
+
+.wrapper .sidebar::-webkit-scrollbar {
+    width: 12px;
+}
+
+.wrapper .sidebar::-webkit-scrollbar-track {
+    background: black;
+}
+
+.wrapper .sidebar::-webkit-scrollbar-thumb {
+    background-color: grey;
+    border-radius: 20px;
+    border: 3px solid black;
+}
+
+.wrapper .sidebar .profile {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.wrapper .sidebar .profile img {
+    display: block;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.wrapper .sidebar .profile h3 {
+    color: #ffffff;
+    margin: 10px 0 5px;
+    text-transform: uppercase;
+}
+
+.wrapper .sidebar .profile p {
+    color: rgb(206, 240, 253);
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.wrapper .sidebar ul {
+    list-style: none;
+    margin-left: -30px;
+}
+
+.wrapper .sidebar ul li a {
+    display: block;
+    padding: 13px 30px;
+    border-bottom: 1px solid grey;
+    color: rgb(241, 237, 237);
+    font-size: 16px;
+    position: relative;
+    text-decoration: none;
+}
+
+
+.wrapper .sidebar ul li a .icon {
+    color: #808080;
+    width: 30px;
+    display:inline-block;
+}
+
+.wrapper .sidebar ul li a:hover,
+.wrapper .sidebar ul li a.active {
+    color:black;
+    background-color: whitesmoke;
+    border-right: 2px solid rgb(5, 68, 104);
+}
+
+.wrapper .sidebar ul li a:hover .icon,
+.wrapper .sidebar ul li a.active .icon {
+    color: black;
+}
+
+.wrapper .sidebar ul li:hover:before,
+.wrapper .sidebar ul li.active:before {
+    display:block;
+}
+
+.wrapper .section .top_navbar {
+    background: black;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+}
+
+.icons {
+    color: whitesmoke !important;
+    font-size: 30px;
+}
+
+.wrapper .section .top_navbar .hamburger a:hover {
+    color: grey;
+}
+
+body.active .wrapper .sidebar {
+    left: -225px;
+}
+
+body.active .wrapper .section {
+    margin-left: 0;
+    width: 100%;
+}
+
+/*
+* Content here
+*/
+
+.wrapper .section .home,
+.wrapper .section .collab,
+.wrapper .section .deve,
+.wrapper .section .report,
+.wrapper .section .admin,
+.wrapper .section .intro,
+.wrapper .section .moderations,
+.wrapper .section .config,
+.wrapper .section .info,
+.wrapper .section .casino,
+.wrapper .section .emote,
+.wrapper .section .action,
+.wrapper .section .games,
+.wrapper .section .friend,
+.wrapper .section .other,
+.wrapper .section .translator {
+    margin-bottom: 500px;
+
+}
+
+.wrapper .section .home .title,
+.wrapper .section .collab .title,
+.wrapper .section .deve .title,
+.wrapper .section .report .title,
+.wrapper .section .admin .title,
+.wrapper .section .intro .title,
+.wrapper .section .moderations .title,
+.wrapper .section .info .title,
+.wrapper .section .config .title,
+.wrapper .section .casino .title,
+.wrapper .section .friend .title,
+.wrapper .section .other .title,
+.wrapper .section .translator .title,
+.wrapper .section .emote .title,
+.wrapper .section .action .title,
+.wrapper .section .games .title {
+    color: whitesmoke;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    border-bottom: 1px solid whitesmoke;
+    margin-bottom: 20px;
+}
+
+.wrapper .section .collab .content p,
+.wrapper .section .home .content p,
+.wrapper .section .deve .content p,
+.wrapper .section .report .content p,
+.wrapper .section .admin .content p,
+.wrapper .section .intro .content p,
+.wrapper .section .moderations .content p,
+.wrapper .section .info .content p,
+.wrapper .section .config .content p,
+.wrapper .section .casino .content p,
+.wrapper .section .friend .content p,
+.wrapper .section .other .content p,
+.wrapper .section .translator .content p,
+.wrapper .section .emote .content p,
+.wrapper .section .action .content p,
+.wrapper .section .games .content p {
+    color: whitesmoke;
+    text-transform: uppercase;
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+
+.wrapper .section .home .row .col .profile,
+.wrapper .section .collab .row .col .profile,
+.wrapper .section .admin .row .col .profile,
+.wrapper .section .intro .row .col .profile {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.wrapper .section .home .row .col img,
+.wrapper .section .collab .row .col img,
+.wrapper .section .admin .row .col img,
+.wrapper .section .intro .row .col img {
+    display: block;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.wrapper .section .home .row .col h3,
+.wrapper .section .collab .row .col h3,
+.wrapper .section .admin .row .col h3,
+.wrapper .section .intro .row .col h3 {
+    font-size: 20px;
+    color: #ffffff;
+    margin: 10px 0 5px;
+    text-transform: uppercase;
+}
+
+.wrapper .section .home .row .col p,
+.wrapper .section .collab .row .col p,
+.wrapper .section .admin .row .col p,
+.wrapper .section .intro .row .col p {
+    color: rgb(206, 240, 253);
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.wrapper .section .deve .title-item {
+    color: rgb(206, 240, 253);
+    text-transform: uppercase;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.wrapper .section .deve .content-item {
+    color: indianred;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.wrapper .section .report table {
+    width: 100%;
+    height: 150px;
+}
+
+.wrapper .section .other table {
+    width: 100%;
+    height: 500px;
+}
+
+.wrapper .section .moderations table,
+.wrapper .section .config table,
+.wrapper .section .games table {
+    width: 100%;
+    height: 800px;
+}
+
+.wrapper .section .casino table,
+.wrapper .section .emote table,
+.wrapper .section .action table,
+.wrapper .section .friend table,
+.wrapper .section .translator table {
+    width: 100%;
+    height: 1500px;
+}
+
+.wrapper .section .info table {
+    width: 100%;
+    height: 2000px;
+}
+
+table, th, td {
+    border: 2px solid whitesmoke;
+}
+
+table th {
+    color: indianred;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+table td {
+    color: green;
+    text-align: center;
+    font-weight: bold;
+    font-size: 15px;
+    text-transform: uppercase;
+}
+
+#btn-back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    background-color: whitesmoke;
+    color: black;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    border: 0px;
+    transition: 0.5s;
+}
+
+#btn-back-to-top:hover {
+    background-color: black;
+    color: whitesmoke;
+    border: 5px solid whitesmoke;
+    transition: 0.5s;
+}
+
+@font-face {
+    font-family: "hack";
+        src: url(../font-family/Hack-Regular.ttf) format('truetype');
+}
+
+html {
+    animation: fadein 2s;
+    -moz-animation: fadein 2s; /* FIREFOX */
+    -webkit-animation: fadein 2s; /* SAFARI AND CHROME */
+    -o-animation: fadein 2s;
+}
+
+body {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none; 
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none; 
+            user-select: none;
+}
+
+body {
+    background-color: black;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: 100% 100%;
+    animation: fadein 2s;
+    -moz-animation: fadein 2s; /* FIREFOX */
+    -webkit-animation: fadein 2s; /* SAFARI AND CHROME */
+    -o-animation: fadein 2s;
+}
+
+.title {
+    text-transform: uppercase;
+    font-family: hack;
+    margin-top: 20px;
+    color: whitesmoke;
+}
+
+.content {
+    text-transform: uppercase;
+    font-family: hack;
+    color: whitesmoke;
+}

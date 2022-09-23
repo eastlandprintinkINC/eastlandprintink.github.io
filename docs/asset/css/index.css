@@ -1,0 +1,100 @@
+@font-face {
+    font-family: "hack";
+        src: url(../font-family/Hack-Regular.ttf) format('truetype');
+}
+
+html {
+    animation: fadein 2s;
+    -moz-animation: fadein 2s; /* FIREFOX */
+    -webkit-animation: fadein 2s; /* SAFARI AND CHROME */
+    -o-animation: fadein 2s;
+}
+
+body {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none; 
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none; 
+            user-select: none;
+}
+
+.navbar {
+    background-color: transparent !important;
+    padding: 10px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: ease-out 0.2s;
+}
+
+.navup {
+    background-color: grey !important;
+    transition: ease-in 0.2s;
+}
+
+.navbar-nav {
+    text-transform: uppercase;
+}
+
+body {
+    background-color: black;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: 100% 100%;
+    animation: fadein 2s;
+    -moz-animation: fadein 2s; /* FIREFOX */
+    -webkit-animation: fadein 2s; /* SAFARI AND CHROME */
+    -o-animation: fadein 2s;
+}
+
+.navbar-nav > a, .navbar-brand {
+    color: whitesmoke !important;
+    font-weight: bold;
+}
+
+.margin1 {
+    margin-top: 160px;
+}
+
+.title {
+    text-transform: uppercase;
+    font-family: hack;
+    margin-top: 20px;
+    color: whitesmoke;
+}
+
+.content {
+    text-transform: uppercase;
+    font-family: hack;
+    color: whitesmoke;
+}
+
+.margin {
+    margin-top: 120px;
+}
+
+.wrap .section .wrap-button {
+    justify-content: center;
+    display: flex;
+    margin-bottom: 10px;
+}
+
+
+.wrap .section .wrap-button .button {
+  font-family: hack;
+  color: whitesmoke;
+  background-color: transparent;
+  border: 5px solid grey;
+  transition: 0.5s;
+  box-shadow: 5px 5px red;
+}
+
+.wrap .section .wrap-button .button:hover {
+  border: 5px solid whitesmoke;
+  color: indianred;
+  transition: 0.5s;
+  box-shadow: 5px 5px green;
+}
+
