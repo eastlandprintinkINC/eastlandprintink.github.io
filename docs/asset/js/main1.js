@@ -165,10 +165,11 @@ $('#send_message').on('click', function () {
             } else {
                 var name = $("#name").val()
                 var message = $("#message").val()
-
+                var captcha = grecaptcha.getResponse();
+                var captchalength = !captcha.length == 0;
                 var verification = (email != "" && email != " " && email != null) && (name != "" && name != " " && name != null) && (message != "" && message != " " && message != null)
 
-                if (verification) {
+                if (verification && captchalength) {
                     swal.fire({
                         html: "Sending your message..",
                         allowEscapeKey: false,
@@ -237,6 +238,14 @@ $('#send_message').on('click', function () {
                         })
                     })
                 } else {
+                    var recaptcha = captcha.length == 0;
+                    if (recaptcha) {
+                        $(".recaptcha_validator").attr("hidden", false);
+                        $(".recaptcha_validator").css("color", "whitesmoke");
+                    } else {
+                        $(".recaptcha_validator").attr("hidden", true);
+                    }
+
                     swal.fire({
                         html: "Fields should be filled up.",
                         allowEscapeKey: false,

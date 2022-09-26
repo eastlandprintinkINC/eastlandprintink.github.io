@@ -406,13 +406,9 @@ textarea {
     background-color: transparent;
     color: whitesmoke;
     border: transparent;
-    transition: 1s ease;
-    padding: 10px 10px;
-}
-
-.msg_button:hover {
     background-color: #39ac49;
-    transition: 1s ease;
+    padding: 10px 10px;
+    cursor: pointer;
 }
 
 /* Cookie */

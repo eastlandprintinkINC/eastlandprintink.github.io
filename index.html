@@ -310,7 +310,12 @@
                                         </div>
                                         <label for="message" class="abouttext">Your Message:</label><br />
                                         <textarea name="message" rows="10" cols="40" aria-invalid="false" id="message"></textarea>
-                                        <br />
+                                        <br /><br>
+                                        <center>
+                                            <div name="recaptcha" class="g-recaptcha" data-sitekey="6LctGCwaAAAAAI17jlVj6yNnB5JtX32dmEq49A7n" data-callback='onSubmit' data-action='submit'></div>
+                                            <p class="recaptcha_validator" hidden>PROVE THAT YOU'RE NOT A ROBOT!</p>
+                                        </center>
+                                        <br>
                                         <center>
                                             <div class="message_button">
                                                 <button class="msg_button" id="send_message">SEND MESSAGE</button>
@@ -716,5 +721,6 @@
 <script src="docs/asset/js/btntop.js"></script>
 <script src="docs/asset/js/cookie.js"></script>
 <script src="docs/asset/js/popup.js"></script>
+<script src="https://www.google.com/recaptcha/api.js"></script>
 </body>
 </html>
