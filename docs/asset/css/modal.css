@@ -34,11 +34,16 @@ h5, h2, p, ul {
     font-family: cairo;
 }
 
-ul.nostyle {
+/* ul.nostyle {
     list-style: none;
+} */
+
+h5 b {
+    color: #005129;
+    line-height: 45px;
 }
 
-.close {
+.close {    
     background-color: transparent;
     border: transparent;
 }
