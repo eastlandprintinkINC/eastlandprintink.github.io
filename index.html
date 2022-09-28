@@ -419,7 +419,7 @@
 
         <footer>
             <div class="container">
-                <a class="policy" data-bs-toggle="modal" data-bs-target="#privacy">Privacy Policy</a><small> | Eastland PrintInk, Inc. &nbsp;V30</small>
+                <a class="policy" data-bs-toggle="modal" data-bs-target="#privacy">Privacy Policy</a><small> | Eastland PrintInk, Inc. &nbsp;V31</small>
             </div>
         </footer>
         <a href="javascript:void(0);" id="scroll" title="Scroll to Top" style="display: none;">Top<span></span></a>
@@ -713,6 +713,25 @@
             </div>
         </div>
 <!--@include('partial.cookie')-->
+<script type="module">
+    import { Octokit } from "https://cdn.skypack.dev/@octokit/core";
+
+    async function version() {
+        const octokit = new Octokit({ auth: `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` });
+
+        const response = await octokit.request("GET repos/{owner}/{repo}/commits", {
+            owner: 'Syfy',
+            repo: 'eastlandprintink.github.io'
+            });
+
+        console.log(response);
+    }
+
+    $(window).on('load', function() {
+        version();
+    })
+</script>
+
 <script src="docs/asset/js/main1.js"></script>
 <script src="docs/asset/js/btntop.js"></script>
 <script src="docs/asset/js/cookie.js"></script>
