@@ -301,3 +301,7 @@ $('#send_message').on('click', function () {
         })
     }
 });
+
+$('#closeCookieConsent').on('click', function() {
+    $("#cookieConsent").fadeOut('slow');
+})
